@@ -11,6 +11,9 @@ olddir=~/dotfiles_old             # old dotfiles backup directory
 files="zshrc zsh config gitconfig"    # list of files/folders to symlink in homedir
 
 ##########
+echo "Deleting previous backup $olddir"
+rm -rf $olddir
+echo "...done"
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
