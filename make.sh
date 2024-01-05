@@ -7,7 +7,7 @@
 ########## Variables
 
 dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
+olddir=~/.dotfiles_old             # old dotfiles backup directory
 files="zshrc zsh config gitconfig"    # list of files/folders to symlink in homedir
 
 ##########
@@ -33,3 +33,8 @@ for file in $files; do
     cp -r $dir/.$file ~/.$file
     echo "...done"
 done
+
+# change to the dotfiles directory
+echo "Copy binary files to ~"
+cp -r ./.local/scripts/* ~/.local/bin/
+echo "...done"
