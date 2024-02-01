@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/dotfiles ~/personal ~/Documents/Obsidian\ Vault/school-notes -mindepth 1 -maxdepth 5 -type d -name '.git'| sed -E 's|/[^/]+$||' | fzf)
+    selected=$(find ~/dotfiles ~/personal ~/Documents/Vault/school-notes -mindepth 1 -maxdepth 5 -type d -name '.git'| sed -E 's|/[^/]+$||' | fzf)
 fi
 
 echo $selected
