@@ -1,3 +1,10 @@
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~"
+alias -- -="cd -"
+
 alias la="ls -a"
 alias vimconf="cd ~/dotfiles/.config/nvim/; nvim ."
 alias dotfiles="cd ~/dotfiles/; nvim ."
