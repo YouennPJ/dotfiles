@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+lsof -i:$1
+count=$(($(lsof -i:$1|wc -l|xargs)-1))
+printf '\nWould you like to kill all processes here (y/N)? or enter a number to kill a specific process\n'
+printf "Choose between 1 and $count\n"
+read answer
+
+if [ "$answer" != "${answer#[Yy]}" ] ;then 
+    echo Yes
+elif [ "$answer" != "${answer#[Nn]}" ] ;then 
+    :
+elif [ $answer -le $count -a $answer -gt 0 ] ;then 
+    e=$(lsof -i:$1 | sed "$(($answer+1))q;d"| awk '{print $2}')
+    echo "Killing process $e"
+    kill -9 ${e}
+else
+    echo "Invalid option\n"
+fi
