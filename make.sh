@@ -8,7 +8,11 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
-files="zshrc zsh config gitconfig"    # list of files/folders to symlink in homedir
+# if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+#     files="zshrc zsh config gitconfig"   
+# elif [[ "$OSTYPE" == "darwin"* ]]; then
+#     files="zshrc zsh config gitconfig"  
+files="zshrc zsh config gitconfig"   
 
 ##########
 echo "Deleting previous backup $olddir"
